@@ -841,7 +841,7 @@ async function setupAuth(app2) {
   for (const domain of process.env.REPLIT_DOMAINS.split(",")) {
     const strategy = new Strategy(
       {
-        name: `replitauth:${domain}`,
+        name: `${domain}`,
         config,
         scope: "openid email profile offline_access",
         callbackURL: `https://${domain}/api/callback`
@@ -4773,8 +4773,10 @@ app.use((req, res, next) => {
     throw err;
   });
   if (app.get("env") === "development") {
+    console.log("in dev");
     await setupVite(app, server);
   } else {
+    console.log("in else");
     serveStatic(app);
   }
   const port = 5e3;

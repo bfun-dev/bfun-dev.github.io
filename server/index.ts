@@ -39,7 +39,8 @@ app.use((req, res, next) => {
 
 (async () => {
   const server = await registerRoutes(app);
-
+  // console.log("server")
+  // console.log(app)
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
     const message = err.message || "Internal Server Error";
@@ -52,8 +53,10 @@ app.use((req, res, next) => {
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
   if (app.get("env") === "development") {
+    console.log("in dev")
     await setupVite(app, server);
   } else {
+    console.log("in else")
     serveStatic(app);
   }
 

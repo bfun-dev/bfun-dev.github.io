@@ -88,7 +88,7 @@ export async function setupAuth(app: Express) {
     .REPLIT_DOMAINS!.split(",")) {
     const strategy = new Strategy(
       {
-        name: `replitauth:${domain}`,
+        name: `${domain}`,
         config,
         scope: "openid email profile offline_access",
         callbackURL: `https://${domain}/api/callback`,
@@ -97,6 +97,8 @@ export async function setupAuth(app: Express) {
     );
     passport.use(strategy);
   }
+  // console.log("passport")
+  // console.log(passport)
 
   passport.serializeUser((user: Express.User, cb) => cb(null, user));
   passport.deserializeUser((user: Express.User, cb) => cb(null, user));

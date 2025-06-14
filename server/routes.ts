@@ -40,7 +40,7 @@ const isAdminAuthenticated = (req: any, res: any, next: any) => {
 export async function registerRoutes(app: Express): Promise<Server> {
   // Auth middleware
   await setupAuth(app);
-
+  // app
   // Admin authentication routes
   app.post('/api/admin/login', async (req, res) => {
     try {
