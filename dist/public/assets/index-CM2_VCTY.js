@@ -1,2 +1,0 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index.umd-DWPiheVG.js","assets/index-CmbUWEHZ.js","assets/index-DFXgJr9O.css"])))=>i.map(i=>d[i]);
-import{_ as n,a as o,b as a}from"./index-CmbUWEHZ.js";function _(i){return n(this,void 0,void 0,function(){var t;return o(this,function(e){switch(e.label){case 0:return[4,a(()=>import("./index.umd-DWPiheVG.js").then(r=>r.i),__vite__mapDeps([0,1,2]))];case 1:return t=e.sent(),i._plugins=t,[2]}})})}export{_ as loadLegacyVideoPlugins};
