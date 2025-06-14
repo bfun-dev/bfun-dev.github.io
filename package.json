@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "SET NODE_ENV=development tsx server/index.ts",
     "build": "vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
-    "start": "NODE_ENV=production DATABASE_URL='postgresql://neondb_owner:npg_KWqraOyIds18@ep-tiny-king-a6juqsvs.us-west-2.aws.neon.tech/neondb?sslmode=require' REPLIT_DOMAINS=8f7cdfcd-9e91-410f-903e-a4ee206b28ab-00-l2nnr683miun.kirk.replit.dev WEB3AUTH_CLIENT_ID=BNeAuPPOLBYjVYp2018UyO7XbdXHzhYiBDs4uWkcujjnMDFLR9_rWNcK6CgChKuLEURgrkttHQbCFc9FOGpDfZ0 SESSION_SECRET=4f3PoGl4jTc1W62Wpv1H4deW/O+zfSwfNwWAzyG/8KRLBr1TmLVQEdX4TbDbQ3P3zgeMR9mpIh/D/28LFD0Mrw== REPL_ID=8f7cdfcd-9e91-410f-903e-a4ee206b28ab node dist/index.js",
+    "start": "NODE_ENV=production DATABASE_URL='postgresql://neondb_owner:npg_KWqraOyIds18@ep-tiny-king-a6juqsvs.us-west-2.aws.neon.tech/neondb?sslmode=require' REPLIT_DOMAINS=bfun-dev.github.io WEB3AUTH_CLIENT_ID=BNeAuPPOLBYjVYp2018UyO7XbdXHzhYiBDs4uWkcujjnMDFLR9_rWNcK6CgChKuLEURgrkttHQbCFc9FOGpDfZ0 SESSION_SECRET=4f3PoGl4jTc1W62Wpv1H4deW/O+zfSwfNwWAzyG/8KRLBr1TmLVQEdX4TbDbQ3P3zgeMR9mpIh/D/28LFD0Mrw== REPL_ID=8f7cdfcd-9e91-410f-903e-a4ee206b28ab node dist/index.js",
     "check": "tsc",
     "db:push": "drizzle-kit push"
   },
