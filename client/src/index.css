@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide Vite error overlays from users */
+#vite-error-overlay,
+vite-error-overlay,
+.vite-error-overlay,
+[data-vite-error-overlay] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+@layer base {
+  :root {
+    /* Light theme colors */
+    --background: 0 0% 100%; /* #ffffff */
+    --foreground: 240 10% 3.9%; /* #0a0a0b */
+    --card: 0 0% 100%; /* #ffffff */
+    --card-foreground: 240 10% 3.9%; /* #0a0a0b */
+    --popover: 0 0% 100%; /* #ffffff */
+    --popover-foreground: 240 10% 3.9%; /* #0a0a0b */
+    --primary: 265 89% 78%; /* #b794f6 purple brand */
+    --primary-foreground: 0 0% 9%; /* #171717 */
+    --secondary: 240 4.8% 95.9%; /* #f1f5f9 */
+    --secondary-foreground: 240 5.9% 10%; /* #1e293b */
+    --muted: 240 4.8% 95.9%; /* #f1f5f9 */
+    --muted-foreground: 240 3.8% 46.1%; /* #64748b */
+    --accent: 240 4.8% 95.9%; /* #f1f5f9 */
+    --accent-foreground: 240 5.9% 10%; /* #1e293b */
+    --destructive: 0 84.2% 60.2%; /* #ef4444 */
+    --destructive-foreground: 0 0% 98%; /* #fafafa */
+    --border: 240 5.9% 90%; /* #e2e8f0 */
+    --input: 240 5.9% 90%; /* #e2e8f0 */
+    --ring: 265 89% 78%; /* #b794f6 */
+    --radius: 0.75rem;
+    --success: 142 76% 36%; /* #16a34a */
+    --error: 0 84.2% 60.2%; /* #ef4444 */
+    --chart-1: 12 76% 61%; /* #e88c30 */
+    --chart-2: 173 58% 39%; /* #2dd4bf */
+    --chart-3: 197 37% 24%; /* #0891b2 */
+    --chart-4: 43 74% 66%; /* #fb923c */
+    --chart-5: 27 87% 67%; /* #f97316 */
+    --sidebar-background: 0 0% 98%; /* #fafafa */
+    --sidebar-foreground: 240 5.3% 26.1%; /* #374151 */
+    --sidebar-primary: 265 89% 78%; /* #b794f6 */
+    --sidebar-primary-foreground: 0 0% 9%; /* #171717 */
+    --sidebar-accent: 240 4.8% 95.9%; /* #f1f5f9 */
+    --sidebar-accent-foreground: 240 5.9% 10%; /* #1e293b */
+    --sidebar-border: 240 5.9% 90%; /* #e2e8f0 */
+    --sidebar-ring: 265 89% 78%; /* #b794f6 */
+  }
+
+  .dark {
+    /* Dark theme colors */
+    --background: 240 8% 6%; /* #0f0f17 */
+    --foreground: 0 0% 98%; /* #fafafa */
+    --card: 240 8% 8%; /* #13131d */
+    --card-foreground: 0 0% 98%; /* #fafafa */
+    --popover: 240 8% 8%; /* #13131d */
+    --popover-foreground: 0 0% 98%; /* #fafafa */
+    --primary: 265 89% 78%; /* #b794f6 purple brand */
+    --primary-foreground: 0 0% 9%; /* #171717 */
+    --secondary: 240 6% 12%; /* #1c1c28 */
+    --secondary-foreground: 0 0% 98%; /* #fafafa */
+    --muted: 240 6% 12%; /* #1c1c28 */
+    --muted-foreground: 240 4% 46%; /* #6b7280 */
+    --accent: 240 6% 12%; /* #1c1c28 */
+    --accent-foreground: 0 0% 98%; /* #fafafa */
+    --destructive: 0 62% 54%; /* #dc2626 */
+    --destructive-foreground: 0 0% 98%; /* #fafafa */
+    --border: 240 6% 15%; /* #262633 */
+    --input: 240 6% 15%; /* #262633 */
+    --ring: 265 89% 78%; /* #b794f6 */
+    --success: 142 76% 36%; /* #16a34a */
+    --error: 0 62% 54%; /* #dc2626 */
+    --chart-1: 220 70% 50%; /* #3b82f6 */
+    --chart-2: 160 60% 45%; /* #10b981 */
+    --chart-3: 30 80% 55%; /* #f59e0b */
+    --chart-4: 280 65% 60%; /* #8b5cf6 */
+    --chart-5: 340 75% 55%; /* #ef4444 */
+    --sidebar-background: 240 8% 8%; /* #13131d */
+    --sidebar-foreground: 0 0% 98%; /* #fafafa */
+    --sidebar-primary: 265 89% 78%; /* #b794f6 */
+    --sidebar-primary-foreground: 0 0% 9%; /* #171717 */
+    --sidebar-accent: 240 6% 12%; /* #1c1c28 */
+    --sidebar-accent-foreground: 0 0% 98%; /* #fafafa */
+    --sidebar-border: 240 6% 15%; /* #262633 */
+    --sidebar-ring: 265 89% 78%; /* #b794f6 */
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+}
+
+/* Tutorial Highlight Styles */
+.tutorial-highlight {
+  position: relative;
+  z-index: 999;
+}
+
+.tutorial-highlight::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 3px solid hsl(var(--primary));
+  border-radius: 8px;
+  pointer-events: none;
+  animation: tutorial-pulse 2s infinite;
+  z-index: 1000;
+}
+
+@keyframes tutorial-pulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+.tutorial-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  pointer-events: none;
+}
